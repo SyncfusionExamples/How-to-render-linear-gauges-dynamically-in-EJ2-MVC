@@ -5,9 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div id="ControlRegion">
-    @{
-        var font = new { color = "#8c8c8c" };
-    }
     <button id="updatePointer" onclick="updatePointer()">Update Pointer</button>
     <div class="row">
 
@@ -18,7 +15,7 @@
 
                 @(Html.EJS().LinearGauge("PointerGauge" + (++count).ToString()).Border(br => br.Color("black").Width(2)).Axes(axes =>
             {
-                axes.LabelStyle(ls => ls.Font(font)).Minimum(gauge.Minimum).Maximum(gauge.Maximum).Ranges(range =>
+                axes.Minimum(gauge.Minimum).Maximum(gauge.Maximum).Ranges(range =>
                 {
                     range.Start(gauge.Minimum).End(gauge.Maximum).StartWidth(6).EndWidth(6).Color("red").Add();
                 }).Pointers(pointer =>
