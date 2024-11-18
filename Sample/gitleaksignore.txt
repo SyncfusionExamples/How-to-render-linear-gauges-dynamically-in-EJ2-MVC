@@ -1,0 +1,1 @@
+Sample/Web.config:generic-api-key:5
